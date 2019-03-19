@@ -2,15 +2,17 @@
 
 /* This neural network predicts the counts of votes for each polling place. */
 
-import("https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.4/synaptic.js"); /* Use the Synaptic library. */
+import {  } from ("https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.4/synaptic.js"); /* Use the Synaptic library. */
 
 function convertToBinaryArray(coordinates) {
 
 "use strict";
     var coordInBinary = coordiates.toString(2); 
     
-    if(coordInBinary.length > 7)
+    if(coordInBinary.length > 7) {
         return [1,1,1,1,1,1,1];
+
+     }
  
     while(coordInBinary.length < 7) { 
         coordInBinary = "0" + coordInBinary;
@@ -28,16 +30,22 @@ var predictr = new synaptic.Architect.Perceptron(
     7, 
     3,
     3, 
-    32 /* 32 is the number of ballot-qualified political parties in the U.S. */
+    31 /* 32 (31 when counting from 0, as JavaScript does) is the number of ballot-qualified political parties in the U.S. */
 );
 
 var trainingData = [];
  
 /* Remeber to edit this data according to changed numbers of neurons */
 
-for(var i = 1;i < 75; i++) {
-    var input = convertToBinaryArray(i); 
-    var output = [0,0,0,0]; 
+var i;
+
+var input;
+
+var output;
+
+for(i = 1;i < 75; i++) {
+    input = convertToBinaryArray(i); 
+    output = [0,0,0,0]; 
     if(i <= 5)
         output = [1,0,0,0]; 
     else if(i > 5 && i <= 15)
@@ -63,8 +71,35 @@ myTrainer.train(trainingData, {
 var coord = convertToBinaryArray(11);
 var recommendations = predictr.activate(coord);
 
-/* Remember to edit code according to number of neurons. */
-console.log("_ neuron: " + (recommendations[0] * 100) + "%");
-console.log("_2 neuron: " + (recommendations[1] * 100) + "%");
-console.log("_3 neuron: " + (recommendations[2] * 100) + "%");
-console.log("_4 neuron: " + (recommendations[3] * 100) + "%");
+console.log("Democrat neuron: " + (recommendations[0] * 100) + "%");
+console.log("Republican neuron: " + (recommendations[1] * 100) + "%");
+console.log("Libertarian neuron: " + (recommendations[2] * 100) + "%");
+console.log("Green neuron: " + (recommendations[3] * 100) + "%");
+console.log("Constitution neuron: " + (recommendations[4] * 100) + "%");
+console.log("Independent/Independence Parties neuron: " + (recommendations[5] * 100 + "%");
+console.log("Working Families neuron: " + (recommendations[6] * 100 + "%");
+console.log("Reform neuron: " + (recommendations[7] * 100 + "%");
+console.log("American Delta neuron: " + (recommendations[8] * 100 + "%");
+console.log("Labor neuron: " + (recommendations[9] * 100 + "%");
+console.log("Natural Law neuron: " + (recommendations[10] * 100 + "%");
+console.log("Progressive neuron: " + (recommendations[11] * 100 + "%");
+console.log("American Freedom neuron: " + (recommendations[12] * 100 + "%");
+console.log("American Party neuron: " + (recommendations[13] * 100 + "%");
+console.log("Better for America neuron: " + (recommendations[14] * 100 + "%");
+console.log("Conservative neuron: " + (recommendations[15] * 100 + "%");
+console.log("Ecology neuron: " + (recommendations[16] * 100 + "%");
+console.log("Grassroots-Legalize Cannabis neuron: " + (recommendations[17] * 100 + "%");
+console.log("Justice neuron: " + (recommendations[18] * 100 + "%");
+console.log("Legal Marijuana Now neuron: " + (recommendations[19] * 100 + "%");
+console.log("Liberty Union neuron: " + (recommendations[20] * 100 + "%");
+console.log("Moderate neuron: " + (recommendations[21] * 100 + "%");
+console.log("Mountian neuron: " + (recommendations[22] * 100 + "%");
+console.log("Peace and Freedom neuron: " + (recommendations[23] * 100 + "%");
+console.log("Prohibition neuron: " + (recommendations[24] * 100 + "%");
+console.log("Socialism and Liberation neuron: " + (recommendations[25] * 100 + "%");
+console.log("United Citizens neuron: " + (recommendations[26] * 100 + "%");
+console.log("United Utah neuron: " + (recommendations[27] * 100 + "%");
+console.log("Unity neuron: " + (recommendations[28] * 100 + "%");
+console.log("Veterans neuron: " + (recommendations[29] * 100 + "%");
+console.log("Women’s Equality neuron: " + (recommendations[30] * 100 + "%");
+console.log("Working Class neuron: " + (recommendations[31] * 100 + "%");
