@@ -50,3 +50,19 @@ for(var i = 1;i < 75; i++) {
         output: output
     });
 }
+
+var myTrainer = new synaptic.Trainer(districtr);
+myTrainer.train(trainingData, {
+    rate: 0.1,
+    iterations: 10000,
+    shuffle: true
+});
+
+var coord = convertToBinaryArray(11);
+var recommendations = districtr.activate(coord);
+
+/* Remember to edit code according to number of neurons. */
+console.log("_ neuron: " + (recommendations[0] * 100) + "%");
+console.log("_2 neuron: " + (recommendations[1] * 100) + "%");
+console.log("_3 neuron: " + (recommendations[2] * 100) + "%");
+console.log("_4 neuron: " + (recommendations[3] * 100) + "%");
