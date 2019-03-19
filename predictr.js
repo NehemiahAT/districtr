@@ -1,5 +1,7 @@
 /* Code based on a tutorial from Progur (https://progur.com/2016/09/how-to-create-deep-neural-networks-in-javascript.html). */
 
+/* This neural network predicts the counts of votes for each polling place. */
+
 import("https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.4/synaptic.js"); /* Use the Synaptic library. */
 
 function convertToBinaryArray(coordinates) {
@@ -51,7 +53,7 @@ for(var i = 1;i < 75; i++) {
     });
 }
 
-var myTrainer = new synaptic.Trainer(districtr);
+var myTrainer = new synaptic.Trainer(predictr);
 myTrainer.train(trainingData, {
     rate: 0.1,
     iterations: 10000,
@@ -59,7 +61,7 @@ myTrainer.train(trainingData, {
 });
 
 var coord = convertToBinaryArray(11);
-var recommendations = districtr.activate(coord);
+var recommendations = predictr.activate(coord);
 
 /* Remember to edit code according to number of neurons. */
 console.log("_ neuron: " + (recommendations[0] * 100) + "%");
