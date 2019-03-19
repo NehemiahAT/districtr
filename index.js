@@ -11,7 +11,7 @@ function convertToBinaryArray(coordinates) {
         return [1,1,1,1,1,1,1];
  
     while(coordInBinary.length < 7) { 
-        coordpInBinary = "0" + coordInBinary;
+        coordInBinary = "0" + coordInBinary;
     }
  
     // Convert string to array
