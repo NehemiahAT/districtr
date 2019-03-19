@@ -26,7 +26,7 @@ var districtr = new synaptic.Architect.Perceptron(
     7, 
     3,
     3, 
-    4
+    32 /* 32 is the number of ballot-qualified political parties in the U.S. */
 );
 
 var trainingData = [];
