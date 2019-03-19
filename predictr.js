@@ -20,7 +20,7 @@ function convertToBinaryArray(coordinates) {
     );
 }
 
-var districtr = new synaptic.Architect.Perceptron(
+var predictr = new synaptic.Architect.Perceptron(
 
 /* Remember to change numbers of neurons. */
     7, 
