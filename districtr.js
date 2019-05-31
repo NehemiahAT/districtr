@@ -2,7 +2,7 @@
 
 /* This neural network predicts the counts of votes for each polling place. */
 
-import {  } from ("https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.4/synaptic.js"); /* Use the Synaptic library. */
+/* Use the Synaptic library v1.1.4. */
 
 function convertToBinaryArray(coordinates) {
 
