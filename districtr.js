@@ -1,6 +1,6 @@
 /* Code based on a tutorial from Progur (https://progur.com/2016/09/how-to-create-deep-neural-networks-in-javascript.html). */
 
-/* This neural network predicts the counts of votes for each polling place. */
+/* This neural network predicts the counts of votes for each person, one at a time. A supercomputer would be needed in real life */
 
 /* Use the Synaptic library v1.1.4. */
 
