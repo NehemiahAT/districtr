@@ -10,7 +10,7 @@ function convertToBinaryArray(coordinates) {
     var coordInBinary = coordiates.toString(2); 
     
     if(coordInBinary.length > 7) {
-        return [1,1,1,1,1,1,1];
+        return [1,1,1,1,1,1,1,1];
 
      }
  
@@ -34,8 +34,6 @@ var predictr = new synaptic.Architect.Perceptron(
 );
 
 var trainingData = [];
- 
-/* Remeber to edit this data according to changed numbers of neurons */
 
 var i;
 
@@ -43,17 +41,9 @@ var input;
 
 var output;
 
-for(i = 1;i < 75; i++) {
-    input = convertToBinaryArray(i); 
-    output = [0,0,0,0]; 
-    if(i <= 5)
-        output = [1,0,0,0]; 
-    else if(i > 5 && i <= 15)
-        output = [0,1,0,0];
-    else if(i > 15 && i <= 40)
-        output = [0,0,1,0]; 
-    else
-        output = [0,0,0,1];
+/* Add training data here. */
+input = [0,0,0,0,0,0,0,1];
+output = [0,0,0,0,0,0,0,1];
  
     trainingData.push({
         input: input,
