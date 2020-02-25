@@ -43,7 +43,7 @@ var output;
 
 /* Add training data here. */
 input = [0,0,0,0,0,0,0,1];
-output = [0,0,0,0,0,0,0,1];
+output = [1];
  
     trainingData.push({
         input: input,
